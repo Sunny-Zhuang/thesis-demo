@@ -1,0 +1,344 @@
+{
+  "nodes": [
+    {
+      "nodeId": "1:124",
+      "name": "Sign Up 1",
+      "type": "FRAME",
+      "layout": {
+        "width": 393,
+        "height": 852,
+        "x": 0,
+        "y": 0
+      },
+      "style": {
+        "background": "#ffffff"
+      },
+      "interactions": []
+    },
+    {
+      "nodeId": "1:125",
+      "name": "Illustration",
+      "type": "FRAME",
+      "layout": {
+        "width": 373,
+        "height": 697,
+        "x": 10,
+        "y": 31
+      },
+      "style": {
+        "background": "#f0f3fb",
+        "radius": 32
+      },
+      "interactions": []
+    },
+    {
+      "nodeId": "1:126",
+      "name": "Pic",
+      "type": "RECTANGLE",
+      "layout": {
+        "width": 363.611,
+        "height": 315,
+        "x": 22,
+        "y": 53
+      },
+      "style": {},
+      "interactions": []
+    },
+    {
+      "nodeId": "31:350",
+      "name": "Button with icon",
+      "type": "INSTANCE",
+      "layout": {
+        "width": 353,
+        "height": 54,
+        "x": 20,
+        "y": 504,
+        "gap": 10,
+        "padding": 19,
+        "direction": "vertical"
+      },
+      "style": {
+        "background": "#ffffff",
+        "border": "1px solid #d8dadc",
+        "radius": 28
+      },
+      "interactions": []
+    },
+    {
+      "nodeId": "I31:350;30:341",
+      "name": "Group 36692",
+      "type": "GROUP",
+      "layout": {
+        "width": 202,
+        "height": 20,
+        "x": 39,
+        "y": 521
+      },
+      "style": {},
+      "interactions": []
+    },
+    {
+      "nodeId": "I31:350;28:333",
+      "name": "Continue with Google",
+      "type": "TEXT",
+      "text": "Continue with Google",
+      "layout": {
+        "width": 168,
+        "height": 20,
+        "x": 73,
+        "y": 521
+      },
+      "style": {
+        "background": "#000000",
+        "color": "#000000"
+      },
+      "interactions": []
+    },
+    {
+      "nodeId": "I31:350;29:334",
+      "name": "Social icon / Google",
+      "type": "INSTANCE",
+      "layout": {
+        "width": 20,
+        "height": 20,
+        "x": 39,
+        "y": 521
+      },
+      "style": {},
+      "interactions": []
+    },
+    {
+      "nodeId": "I31:350;29:334;26:276",
+      "name": "Google logo",
+      "type": "RECTANGLE",
+      "layout": {
+        "width": 18.174,
+        "height": 19,
+        "x": 40,
+        "y": 521
+      },
+      "style": {
+        "radius": 10
+      },
+      "interactions": []
+    },
+    {
+      "nodeId": "31:359",
+      "name": "Button with icon",
+      "type": "INSTANCE",
+      "layout": {
+        "width": 353,
+        "height": 54,
+        "x": 20,
+        "y": 572,
+        "gap": 10,
+        "padding": 19,
+        "direction": "vertical"
+      },
+      "style": {
+        "background": "#ffffff",
+        "border": "1px solid #d8dadc",
+        "radius": 28
+      },
+      "interactions": []
+    },
+    {
+      "nodeId": "I31:359;30:341",
+      "name": "Group 36692",
+      "type": "GROUP",
+      "layout": {
+        "width": 192,
+        "height": 20,
+        "x": 39,
+        "y": 589
+      },
+      "style": {},
+      "interactions": []
+    },
+    {
+      "nodeId": "I31:359;28:333",
+      "name": "Continue with Google",
+      "type": "TEXT",
+      "text": "Continue with Apple",
+      "layout": {
+        "width": 158,
+        "height": 20,
+        "x": 73,
+        "y": 589
+      },
+      "style": {
+        "background": "#000000",
+        "color": "#000000"
+      },
+      "interactions": []
+    },
+    {
+      "nodeId": "I31:359;29:334",
+      "name": "Social icon / Apple",
+      "type": "INSTANCE",
+      "layout": {
+        "width": 20,
+        "height": 20,
+        "x": 39,
+        "y": 589
+      },
+      "style": {},
+      "interactions": []
+    },
+    {
+      "nodeId": "I31:359;29:334;26:281",
+      "name": "Vector",
+      "type": "RECTANGLE",
+      "layout": {
+        "width": 16.526,
+        "height": 19.934,
+        "x": 41,
+        "y": 589
+      },
+      "style": {},
+      "interactions": []
+    },
+    {
+      "nodeId": "31:369",
+      "name": "Button with icon",
+      "type": "INSTANCE",
+      "layout": {
+        "width": 353,
+        "height": 54,
+        "x": 20,
+        "y": 640,
+        "gap": 10,
+        "padding": 19,
+        "direction": "vertical"
+      },
+      "style": {
+        "background": "#ffffff",
+        "border": "1px solid #d8dadc",
+        "radius": 28
+      },
+      "interactions": []
+    },
+    {
+      "nodeId": "I31:369;30:341",
+      "name": "Group 36692",
+      "type": "GROUP",
+      "layout": {
+        "width": 188,
+        "height": 20,
+        "x": 39,
+        "y": 657
+      },
+      "style": {},
+      "interactions": []
+    },
+    {
+      "nodeId": "I31:369;28:333",
+      "name": "Continue with Google",
+      "type": "TEXT",
+      "text": "Continue with Email",
+      "layout": {
+        "width": 154,
+        "height": 20,
+        "x": 73,
+        "y": 657
+      },
+      "style": {
+        "background": "#000000",
+        "color": "#000000"
+      },
+      "interactions": []
+    },
+    {
+      "nodeId": "I31:369;29:334",
+      "name": "Social icon / Mail",
+      "type": "INSTANCE",
+      "layout": {
+        "width": 20,
+        "height": 20,
+        "x": 39,
+        "y": 657
+      },
+      "style": {},
+      "interactions": []
+    },
+    {
+      "nodeId": "I31:369;29:334;26:282",
+      "name": "Message",
+      "type": "RECTANGLE",
+      "layout": {
+        "width": 18,
+        "height": 14.824,
+        "x": 40,
+        "y": 660
+      },
+      "style": {
+        "radius": 10
+      },
+      "interactions": []
+    },
+    {
+      "nodeId": "1:131",
+      "name": "Already have an account? Log in",
+      "type": "TEXT",
+      "text": "Already have an account? Log in",
+      "layout": {
+        "width": 215,
+        "height": 18,
+        "x": 89,
+        "y": 769
+      },
+      "style": {
+        "background": "#000000",
+        "color": "#000000"
+      },
+      "interactions": []
+    },
+    {
+      "nodeId": "31:378",
+      "name": "Text",
+      "type": "GROUP",
+      "layout": {
+        "width": 319,
+        "height": 88,
+        "x": 37,
+        "y": 385
+      },
+      "style": {},
+      "interactions": []
+    },
+    {
+      "nodeId": "1:132",
+      "name": "Explore the app",
+      "type": "TEXT",
+      "text": "Explore the app",
+      "layout": {
+        "width": 234,
+        "height": 39,
+        "x": 79,
+        "y": 385
+      },
+      "style": {
+        "background": "#000000",
+        "color": "#000000"
+      },
+      "interactions": []
+    },
+    {
+      "nodeId": "1:133",
+      "name": "Now your finances are in one place and always under control",
+      "type": "TEXT",
+      "text": "Now your finances are in one place and always under control",
+      "layout": {
+        "width": 319,
+        "height": 40,
+        "x": 37,
+        "y": 433
+      },
+      "style": {
+        "background": "#000000",
+        "color": "#000000"
+      },
+      "interactions": []
+    }
+  ]
+}

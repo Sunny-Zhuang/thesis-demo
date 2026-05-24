@@ -1,0 +1,99 @@
+{
+  "type": "Page",
+  "metadata": {
+    "source": "figma+screenshot",
+    "screenshotId": "./assets/example.screenshot.txt",
+    "confidence": 0.72,
+    "rerunFeedbacks": [],
+    "appliedFeedbackRules": []
+  },
+  "layout": {
+    "padding": 24,
+    "gap": 16,
+    "direction": "vertical"
+  },
+  "children": [
+    {
+      "type": "Module",
+      "name": "SearchBar",
+      "layout": {
+        "direction": "horizontal",
+        "align": "center",
+        "gap": 8,
+        "height": 48
+      },
+      "children": [
+        {
+          "type": "Input",
+          "ref": "antd.Input",
+          "props": {
+            "placeholder": "Search"
+          }
+        },
+        {
+          "type": "Button",
+          "ref": "antd.Button",
+          "props": {
+            "text": "Go",
+            "type": "primary"
+          },
+          "interactions": [
+            {
+              "trigger": "onClick",
+              "action": "OPEN_MODAL",
+              "target": "confirm_modal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Module",
+      "name": "ResultList",
+      "layout": {
+        "direction": "vertical",
+        "gap": 8
+      },
+      "children": [
+        {
+          "type": "Module",
+          "name": "ResultCard",
+          "children": [
+            {
+              "type": "Text",
+              "ref": "antd.Typography.Text",
+              "props": {
+                "text": "Result title"
+              }
+            }
+          ],
+          "reusable": true,
+          "reusableCandidateId": "Module_ResultCard",
+          "reusability": {
+            "candidateId": "Module_ResultCard",
+            "status": "approved"
+          }
+        },
+        {
+          "type": "Module",
+          "name": "ResultCard",
+          "children": [
+            {
+              "type": "Text",
+              "ref": "antd.Typography.Text",
+              "props": {
+                "text": "Result title"
+              }
+            }
+          ],
+          "reusable": true,
+          "reusableCandidateId": "Module_ResultCard",
+          "reusability": {
+            "candidateId": "Module_ResultCard",
+            "status": "approved"
+          }
+        }
+      ]
+    }
+  ]
+}

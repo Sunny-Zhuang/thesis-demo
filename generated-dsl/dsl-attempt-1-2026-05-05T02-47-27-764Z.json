@@ -1,0 +1,102 @@
+{
+  "type": "Page",
+  "metadata": {
+    "source": "figma+screenshot",
+    "screenshotId": "./assets/example.screenshot.txt",
+    "confidence": 0.72,
+    "rerunFeedbacks": [],
+    "appliedFeedbackRules": []
+  },
+  "layout": {
+    "padding": 24,
+    "justify": "start",
+    "gap": 16,
+    "direction": "vertical"
+  },
+  "children": [
+    {
+      "type": "Module",
+      "name": "SearchBar",
+      "layout": {
+        "direction": "horizontal",
+        "align": "center",
+        "justify": "space-between",
+        "padding": 12,
+        "gap": 8,
+        "height": 48,
+        "width": 640
+      },
+      "props": {},
+      "children": [
+        {
+          "type": "Input",
+          "ref": "antd.Input",
+          "props": {
+            "placeholder": "Search"
+          }
+        },
+        {
+          "type": "Button",
+          "ref": "antd.Button",
+          "props": {
+            "text": "Go",
+            "type": "primary"
+          },
+          "interactions": [
+            {
+              "trigger": "onClick",
+              "action": "OPEN_MODAL",
+              "target": "confirm_modal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Module",
+      "name": "ResultList",
+      "layout": {
+        "direction": "vertical",
+        "padding": 8,
+        "gap": 8
+      },
+      "props": {},
+      "children": [
+        {
+          "type": "Module",
+          "name": "ResultCard",
+          "layout": {
+            "padding": 8,
+            "gap": 8
+          },
+          "children": [
+            {
+              "type": "Text",
+              "ref": "antd.Typography.Text",
+              "props": {
+                "text": "Result title"
+              }
+            }
+          ]
+        },
+        {
+          "type": "Module",
+          "name": "ResultCard",
+          "layout": {
+            "padding": 8,
+            "gap": 8
+          },
+          "children": [
+            {
+              "type": "Text",
+              "ref": "antd.Typography.Text",
+              "props": {
+                "text": "Result title"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
