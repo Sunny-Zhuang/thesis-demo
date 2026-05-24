@@ -34,10 +34,7 @@ const visionLlmSchema = z.object({
     modules: z.array(moduleSchema).optional(),
     reusableCandidates: z.array(reusableCandidateSchema).optional()
 });
-const DEFAULT_VISION_LLM_API_URL = "https://ergouzi.life/chat/completions";
-const DEFAULT_VISION_LLM_TOKEN = "sk-7T9ohVgZYSOFbBSgPfyHeOBKAAk58vhq8CC1QvrGBjvLcbeR";
 const DEFAULT_VISION_LLM_MODEL = "gpt-4o-mini";
-const FALLBACK_VISION_LLM_MODEL = "gpt-4o-mini";
 function extractJsonPayload(raw) {
     const trimmed = raw.trim();
     if (!trimmed)
@@ -189,18 +186,15 @@ function mergeModulesWithCompact(llmModules, compactModules) {
     return merged;
 }
 async function callVisionLLM(request, compactContext) {
-    const apiUrlRaw = process.env.VISION_LLM_API_URL ?? DEFAULT_VISION_LLM_API_URL;
-    const token = process.env.VISION_LLM_TOKEN ?? DEFAULT_VISION_LLM_TOKEN;
+    const apiUrl = process.env.VISION_LLM_API_URL;
+    const token = process.env.VISION_LLM_TOKEN;
     const model = process.env.VISION_LLM_MODEL ?? DEFAULT_VISION_LLM_MODEL;
-    const apiUrl = /\/v1\/chat\/completions\/?$/i.test(apiUrlRaw)
-        ? apiUrlRaw
-        : apiUrlRaw.replace(/\/chat\/completions\/?$/i, "/v1/chat/completions");
+    // 如果没有配置 API URL 或 Token，跳过 LLM 调用
     if (!apiUrl || !token) {
+        log("llm not configured, skipping", { hasUrl: !!apiUrl, hasToken: !!token });
         return null;
     }
-    if (apiUrl !== apiUrlRaw) {
-        log("normalized llm api url", { from: apiUrlRaw, to: apiUrl });
-    }
+    log("using llm api", { url: apiUrl, model });
     let screenshotBase64;
     if (request.screenshotPath) {
         try {
@@ -219,7 +213,7 @@ async function callVisionLLM(request, compactContext) {
             compactStructure: compactContext,
             rerunFeedbacks: request.rerunFeedbacks ?? []
         };
-        const modelCandidates = model === FALLBACK_VISION_LLM_MODEL ? [model] : [model, FALLBACK_VISION_LLM_MODEL];
+        const modelCandidates = [model];
         for (const modelCandidate of modelCandidates) {
             const resp = await fetch(apiUrl, {
                 method: "POST",
@@ -245,13 +239,10 @@ async function callVisionLLM(request, compactContext) {
             const contentType = resp.headers.get("content-type") ?? "";
             if (!resp.ok) {
                 const failureBody = await resp.text().catch(() => "");
-                const shouldFallbackModel = resp.status === 403 &&
-                    modelCandidate !== FALLBACK_VISION_LLM_MODEL &&
-                    /no access to model/i.test(failureBody);
+                const shouldFallbackModel = false; // 单模型模式，不使用 fallback
                 if (shouldFallbackModel) {
-                    log("llm model access denied; retrying fallback model", {
-                        deniedModel: modelCandidate,
-                        fallbackModel: FALLBACK_VISION_LLM_MODEL
+                    log("llm model access denied; no fallback configured", {
+                        deniedModel: modelCandidate
                     });
                     continue;
                 }
